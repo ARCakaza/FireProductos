@@ -1,0 +1,74 @@
+/* ===== Tokens ===== */
+:root {
+  --ink: #14263a;
+  --ink-soft: #46586b;
+  --paper: #eef2f6;
+  --surface: #ffffff;
+  --line: #d3dce6;
+  --accent: #1b6f6a;
+  --danger: #b3261e;
+  --radius: 10px;
+}
+
+body {
+  font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+h1, h2 { letter-spacing: -0.01em; }
+
+/* ===== Barra superior ===== */
+.topbar { background: var(--surface); border-bottom: 1px solid var(--line); }
+.brand { font-weight: 800; font-size: 1.2rem; }
+.user-label { color: var(--ink-soft); font-size: .9rem; max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ===== Botones ===== */
+.btn-ink { background: var(--ink); color: #fff; border: 1px solid var(--ink); font-weight: 700; }
+.btn-ink:hover, .btn-ink:focus-visible { background: #0c1a29; color: #fff; }
+.btn-outline-ink { background: transparent; color: var(--ink); border: 1px solid var(--ink); font-weight: 700; }
+.btn-outline-ink:hover, .btn-outline-ink:focus-visible { background: var(--ink); color: #fff; }
+.btn-danger-soft { background: transparent; color: var(--danger); border: 1px solid var(--danger); font-weight: 700; }
+.btn-danger-soft:hover, .btn-danger-soft:focus-visible { background: var(--danger); color: #fff; }
+.btn:focus-visible, .form-control:focus, .form-select:focus { outline: 3px solid rgba(27, 111, 106, .45); outline-offset: 1px; box-shadow: none; }
+
+/* ===== Portada sin sesión ===== */
+.hero { max-width: 640px; padding: 3rem 0; }
+.hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.1; }
+.hero p { font-size: 1.1rem; color: var(--ink-soft); margin: 1rem 0 1.5rem; }
+
+/* ===== Paneles ===== */
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem; }
+.panel-title { font-size: 1.25rem; font-weight: 800; margin-bottom: 1rem; }
+.form-label { font-weight: 700; font-size: .9rem; }
+.field-error { color: var(--danger); font-size: .9rem; font-weight: 600; margin-top: .5rem; }
+
+/* ===== Vista previa de imágenes (formulario) ===== */
+.image-preview { display: grid; grid-template-columns: repeat(auto-fill, minmax(88px, 1fr)); gap: .5rem; margin-top: .75rem; }
+.preview-item { position: relative; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; aspect-ratio: 1; background: var(--paper); }
+.preview-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.preview-item .badge-new { position: absolute; left: 4px; bottom: 4px; background: var(--accent); color: #fff; font-size: .7rem; padding: 1px 6px; border-radius: 4px; }
+.preview-remove { position: absolute; top: 4px; right: 4px; width: 24px; height: 24px; border: 0; border-radius: 50%; background: rgba(20, 38, 58, .85); color: #fff; line-height: 1; cursor: pointer; }
+.preview-remove:hover, .preview-remove:focus-visible { background: var(--danger); }
+
+/* ===== Lista de productos ===== */
+.product-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.product-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
+.gallery-main { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; background: var(--paper); }
+.gallery-thumbs { display: flex; gap: .35rem; padding: .5rem .75rem 0; }
+.gallery-thumbs img { width: 44px; height: 44px; object-fit: cover; border-radius: 6px; border: 2px solid transparent; cursor: pointer; }
+.gallery-thumbs img:hover { border-color: var(--accent); }
+.product-body { padding: .75rem 1rem 1rem; display: flex; flex-direction: column; gap: .35rem; flex: 1; }
+.product-name { font-size: 1.05rem; font-weight: 800; margin: 0; }
+.product-price { font-weight: 800; color: var(--accent); }
+.product-desc { color: var(--ink-soft); font-size: .9rem; margin: 0; }
+.product-meta { font-size: .85rem; color: var(--ink-soft); }
+.product-actions { margin-top: auto; padding-top: .75rem; display: flex; gap: .5rem; }
+.empty-state { grid-column: 1 / -1; background: var(--surface); border: 1px dashed var(--line); border-radius: var(--radius); padding: 2rem; text-align: center; color: var(--ink-soft); }
+
+/* ===== Modales ===== */
+.divider { display: flex; align-items: center; gap: .75rem; color: var(--ink-soft); font-size: .85rem; margin: 1.25rem 0; }
+.divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+/* ===== Avisos ===== */
+.alert-stack { position: fixed; top: 1rem; left: 50%; transform: translateX(-50%); width: min(92vw, 480px); z-index: 2000; display: grid; gap: .5rem; }
